@@ -1,0 +1,456 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: black;
+    min-height: 100vh;
+}
+
+header{
+    min-height: 4vh;
+    position: relative;
+    color: white;
+}
+
+header span{
+    position: absolute;
+    right: 10px;
+    margin: 5px 0;
+    font-size: 1.15rem;
+    cursor: pointer;
+}
+
+#input{
+    width: 90vw;
+    height: 20%;
+    display: block;
+    margin: auto;
+    text-align: right;
+    padding: 10px;
+    font-size: 8rem;
+    color: white;
+    border: none;
+    outline: none;
+    background: transparent;
+    /* background: green; */
+}
+
+#input::placeholder{
+    color: white;
+}
+
+.dropdown{
+    height: 20vh;
+    width: 20vw;
+    /* background: red; */
+    border-radius: 20px;
+    /* display: inline-table;  */
+    display: none; 
+    z-index: 1;
+    position: absolute;
+    right: 10px;   
+    background: #2e2e2e; 
+}
+
+.dropdown-item, a{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid white;
+    font-size: 1.2rem;
+    margin: 15px 0 0 0;
+    padding: 5px 0 ;
+    color: white;    
+    text-decoration: none;
+}
+
+a{
+    margin: 0;
+    text-decoration: none;
+}
+
+#age,a{
+    border-bottom: none;
+}
+
+.dropdown-item:hover{
+   color: orange;
+   border-bottom: 1px solid orange;
+}
+
+.history{
+    height: 40vh;
+    width: 40vw;
+    background: #343434;
+    border-radius: 20px;
+    /* display: inline-table;  */
+    display: none; 
+    z-index: 1;
+    position: absolute;
+    right: 30%;
+}
+
+#head-history{
+    display: flex;
+    justify-content: space-between;
+    background: #2e2e2e;
+    font-size: 1.2rem;
+    color: orange;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+#head-history span{
+    padding: 5px;
+    margin: 10px 5px 5px 5px;
+    
+}
+
+#history{
+    color: white;
+    padding: 5px;
+    margin: 10px 5px 5px 5px;   
+    font-size: 1.2rem;    
+}
+
+.display-history{
+    display: block;
+    justify-content: space-between;
+    background: transparent;
+    height: 20vh;
+    padding: 5px;    
+    overflow: scroll;
+    /* background: red; */
+}
+
+.history-area{
+    display: flex;
+    justify-content: space-between;
+}
+
+#time{
+    color: white;
+    font-size: 1.2rem;
+}
+
+#sec{
+    font-size: 1rem;
+    color: #838383;
+}
+
+#result,#value{
+    color: orange;
+    font-size: 1rem;
+}
+
+#value,#equation{
+    color: white;
+}
+
+button{
+    height: 12vh;
+    width: 9.7vw;
+    margin: 3px;    
+    font-size: 2rem;
+    border-radius: 50%;
+    border: none;
+    background: #212121;
+    color: white;
+}
+
+button:active{
+    background: lightgrey;
+    transition: background 0.3s ease;
+}
+
+#zero{
+    width: 20vw;
+    border-radius: 100px;
+    text-align: left;
+    padding-left: 50px;
+    font-size: 2.5rem;
+}
+
+.btn{
+    margin: 0 25px;
+}
+
+.basic-operator, .equal{
+    font-size: 2.5rem;
+    background: #ff9e0e;
+}
+
+.basic-operator:hover{
+    background: white;
+    color: #ff9e0e;
+}
+
+.number{
+    background: #333333;
+    color: white;
+    font-size: 2.3rem;
+}
+
+.functional-operator{
+    background: #a5a5a5;
+    color: black;
+    font-size: 2.1rem;
+}
+
+#nav-bar{
+    height: 5px;
+    width: 30%;
+    background: white;
+    opacity: 0.55;
+    position: fixed;    
+    bottom: 10px;
+    border-radius: 50px;
+    margin-left: 35%;    
+}
+
+#nav-bar:active{
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+@media screen and (max-width:1070px){
+    button{
+        width: 9vw;
+        height: 11vh;
+        font-size: 1.95rem;
+    }
+    
+    .btn{
+        margin: 0px 50px;
+    }  
+    
+    #zero{
+        width: 19vw;
+    }
+}
+
+@media screen and (max-width:980px){
+    button{
+        width: 8vw;
+        height: 11.8vh;
+        font-size: 1.7em;
+    }    
+    
+    #zero{
+        width: 17.5vw;
+        padding-left: 30px;
+    }
+    
+    #input{
+        width: 80vw;
+        height: 10%;
+        font-size: 5rem;
+        margin-top: 0;        
+    }
+}
+
+@media screen and (max-width:800px){
+    button{
+        width: 8vw;
+        height: 10vh;
+        font-size: 1.5rem;
+    }
+    
+    .number{
+        font-size: 2rem;
+    }
+    
+    #zero{
+        padding-left: 25px;
+    }    
+}
+
+@media(max-width:700px){
+    button{
+        font-size: 1.5rem;
+    }
+    
+    .number{
+        font-size: 1.8rem;
+    }
+    
+    .functional-operator{
+        font-size: 1.8rem;
+    }
+    
+    #zero{
+        width: 17.5vw;
+        font-size: 2rem;
+    }
+    
+    .history{
+        height: 30vh;
+    }
+}
+
+@media screen and (max-width:670px){
+    .special-operator{
+        display: none;
+    }
+    
+    button{
+        width: 19.5vw;
+        height: 11.5vh;        
+    }
+    
+    .btn{
+        margin: 0px 20px 0px 50px;
+    }
+    
+    .number, .functional-operator{
+        font-size: 2.7rem;
+    }
+    
+    .basic-operator,.equal{
+        font-size: 3rem;
+    }
+    
+    #zero{
+        width: 40vw;
+        font-size: 3.2rem;
+        padding-left: 40px;
+    }
+    
+    #input{
+        height: 50%;
+        margin-top: 50px;
+        font-size: 2rem;
+    }
+    
+    .dropdown{
+        width: 30vw;
+        height: 15vh;
+    }
+    
+    .history{
+        height: 30vh;
+        width: 45vw;
+    }
+    .display-history{
+        height: 15vh;
+    }
+}
+
+@media screen and (max-width:480px){
+    button{
+        width: 20vw;
+        height: 10vh;
+    }
+    
+    .btn{
+        margin: 0px 30px; 
+    }
+    
+    header{
+        min-height: 5vh;
+    }
+    
+    #zero{
+        width: 41vw;
+    }
+    
+    #input{
+        margin-top: 15vh;
+        font-size: 8rem;
+    }
+    .dropdown{
+        width: 38vw;
+        height: 13vh;
+    }
+    
+    .history{
+        height: 25vh;
+        width: 60vw;
+    }
+    
+    #history{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:475px){   
+    .btn{
+        margin: 0px 20px;
+    }
+    
+    .functional-operator{
+        font-size: 1.5rem;
+    }
+    
+    #input{
+        margin-top: 13.5vh;
+    }
+    .dropdown{
+        width: 38vw;
+        height: 12vh;
+    }
+    
+    .history{
+        height: 20vh;
+        width: 40vw;
+    }
+    
+    #time{
+        font-size: 1rem;        
+    }
+    
+    #value{
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width:380px){
+    .btn{
+        margin: 0px 15px;
+    }
+    
+    .number, .basic-operator, .equal{
+        font-size: 1.8rem;
+    }
+    
+    #input{
+        margin-top: 10vh;
+        font-size: 5rem;
+    }
+    
+    #zero{
+        font-size: 2rem;
+        padding-left: 30px;
+    }
+    
+    .dropdown{
+        width: 35vw;
+        height: 10vh;        
+    }
+    
+    .history{
+        width: 50vw;
+        height: 20vh;
+    }    
+}
+
+@media screen and (max-width:330px){
+    .btn{
+        margin: 0px 10px;
+    }        
+    .dropdown{
+        width: 38vw;
+        height: 10vh;
+    }
+    
+    .history{
+        
+    }
+}
+
+@media screen and (max-width:280px){
+    .btn{
+        margin: 0px 5px;
+    }
+}
